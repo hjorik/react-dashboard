@@ -1,0 +1,19 @@
+{
+  "element": [
+    {
+      "title": "Google",
+      "url": "https://google.com",
+      "id": 1
+    },
+    {
+      "title": "FritzBox",
+      "url": "http://192.168.178.1/",
+      "id": 2
+    },
+    {
+      "title": "Solaranlage",
+      "url": "18675435323",
+      "id": 3
+    }
+  ]
+}

@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+// import logo from './logo.svg';
 import './App.css';
+// import {useState} from "react";
+import DashboardList from './components/DashboardList';
+// import DashboardData from './data/DashboardData';s
+import DashboardForm from './components/DashboardForm';
+import { DashboardProvider } from "./context/DashboardContext";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    /* const [dashboardelement, setDashboardElement] = useState(DashboardData);
+    const deleteDashboardElement = function(id) {
+        console.log("App", id);
+            if(window.confirm("Are you sure you want to remove this Dashboardelement?")) {
+              setDashboardElement(dashboardelement.filter((element) => element.id !== id))
+            }
+    } */
+    return (
+        <DashboardProvider>
+            <Router>
+                <div>
+                    <Routes>
+                        <Route exact path="/" element={
+                            <>
+                            <DashboardForm/>
+                            <DashboardList/>
+                            </>
+                        }>
+                        </Route>
+                        <Route>
+
+                        </Route>
+                    </Routes>
+                </div>
+            </Router>
+        </DashboardProvider>
+    );
 }
 
 export default App;
