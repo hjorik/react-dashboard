@@ -1,19 +1,86 @@
 {
   "element": [
     {
-      "title": "Google",
+      "title": "Link 1",
       "url": "https://google.com",
+      "icon": "FaGoogle",
+      "tag": "netzwerk",
       "id": 1
     },
     {
-      "title": "FritzBox",
-      "url": "http://192.168.178.1/",
+      "title": "Link 2",
+      "url": "",
+      "icon": "FaServer",
+      "tag": "netzwerk",
       "id": 2
     },
     {
-      "title": "Solaranlage",
-      "url": "18675435323",
+      "title": "Link 3",
+      "url": "",
+      "icon": "FaCommentDots",
+      "tag": "netzwerk",
       "id": 3
+    },
+    {
+      "title": "Link 4",
+      "url": "",
+      "icon": "FaDatabase",
+      "tag": "netzwerk",
+      "id": 4
+    },
+    {
+      "title": "Link 5",
+      "url": "",
+      "icon": "FaHome",
+      "tag": "strom",
+      "id": 5
+    },
+    {
+      "title": "Link 6",
+      "url": "",
+      "icon": "FaPoll",
+      "tag": "strom",
+      "id": 6
+    },
+    {
+      "title": "Link 7",
+      "url": "",
+      "icon": "FaRocket",
+      "tag": "strom",
+      "id": 7
+    },
+    {
+      "title": "Speicher",
+      "url": "",
+      "icon": "FaAccessibleIcon",
+      "tag": "smarthome",
+      "id": 8
+    }
+  ],
+  "nav": [
+    {
+      "title": "Dashboard",
+      "tag": "main",
+      "icon": "FaBorderAll",
+      "id": 1
+    },
+    {
+      "title": "Strom",
+      "tag": "strom",
+      "icon": "FaBolt",
+      "id": 2
+    },
+    {
+      "title": "Netzwerk",
+      "tag": "netzwerk",
+      "icon": "FaNetworkWired",
+      "id": 3
+    },
+    {
+      "title": "Smart-Home",
+      "tag": "smarthome",
+      "icon": "FaHome",
+      "id": 4
     }
   ]
 }

@@ -6,6 +6,9 @@ import DashboardList from './components/DashboardList';
 // import DashboardData from './data/DashboardData';s
 import DashboardForm from './components/DashboardForm';
 import { DashboardProvider } from "./context/DashboardContext";
+import Settings from "./components/Settings";
+import SidebarList from "./components/SidebarList";
+import SidebarForm from "./components/SidebarForm"
 
 function App() {
     /* const [dashboardelement, setDashboardElement] = useState(DashboardData);
@@ -15,6 +18,7 @@ function App() {
               setDashboardElement(dashboardelement.filter((element) => element.id !== id))
             }
     } */
+
     return (
         <DashboardProvider>
             <Router>
@@ -22,8 +26,12 @@ function App() {
                     <Routes>
                         <Route exact path="/" element={
                             <>
+                            <SidebarForm/>
+                            <SidebarList/>
+                            <Settings/>
                             <DashboardForm/>
-                            <DashboardList/>
+                            <DashboardList>
+                            </DashboardList>
                             </>
                         }>
                         </Route>

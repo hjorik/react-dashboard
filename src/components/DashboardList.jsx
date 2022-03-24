@@ -4,31 +4,46 @@ import { useContext } from "react";
 import PropTypes from "prop-types";
 import DashboardElement from "./DashboardElement";
 import DashboardContext from "../context/DashboardContext";
+import Button from "./shared/Button";
 
 function DashboardList() {
 
-	const {element, isLoading} = useContext(DashboardContext);
+	const {element, isLoading, showEditmode, showDashboardForm, filter} = useContext(DashboardContext);
 
 	if(!isLoading && (!element || element.length === 0)) {
 		return <p>Keine Dashboardelemente vorhanden!</p>
-	} else {
+	} else if(filter === "main") {
 		return isLoading ? <h2>Lädt</h2> : (
 			<div className="dashboard-list">
-			<AnimatePresence>
+			
 				{element.map((element) => (
-					<motion.div
+					
+					<DashboardElement
 						key={element.id}
-						initial={{opacity: 0}}
-						animate={{opacity: 1}}
-						exit={{opacity: 0}}
-						>
-						<DashboardElement
-							key={element.id}
-							element={element}
-						/>
-					</motion.div>
+						element={element}
+					>
+					</DashboardElement>
+					
+				))}			
+			
+			<Button version="add" style={{display: showEditmode === true ? "flex" : "none"}} onClick={() => showDashboardForm()}>+</Button>
+		</div>
+		);
+	} else if(filter !== "main") {
+		return isLoading ? <h2>Lädt</h2> : (
+			<div className="dashboard-list">
+			
+				{element.filter(element => element.tag === filter).map(filteredElements => (
+					
+					<DashboardElement
+						key={filteredElements.id}
+						element={filteredElements}
+					>
+					</DashboardElement>
+					
 				))}
-			</AnimatePresence>
+		
+			<Button version="add" style={{display: showEditmode === true ? "flex" : "none"}} onClick={() => showDashboardForm()}>+</Button>
 		</div>
 		);
 	}
